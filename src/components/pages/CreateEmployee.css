@@ -1,0 +1,25 @@
+.add-icon {
+  border: 3px solid #f9b17a;
+  border-radius: 50px;
+  height: 2rem;
+  width: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.user-add {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.user-add h1 {
+  gap: 1rem;
+}
+
+.user-add h2 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  font-family: "Rock Salt", cursive;
+}

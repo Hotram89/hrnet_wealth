@@ -1,0 +1,72 @@
+.registerForm {
+  display: flex;
+}
+
+.create-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.input-container {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+label {
+  background-color: #424769;
+  color: #676f9d;
+  width: 250px;
+  margin-bottom: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 1rem;
+  font-size: 0.7rem;
+  border-left: transparent 10px solid;
+  cursor: pointer;
+}
+
+label:active,
+label:hover {
+  border-left: #f9b17a 10px solid;
+}
+
+input {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 100%;
+  margin: 0.5rem;
+}
+input:focus {
+  outline: none;
+}
+
+.btn-save {
+  background-color: #f9b17a;
+  font-weight: 700;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  width: 5rem;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px#f9b17a;
+  transition-duration: 200ms;
+}
+
+.btn-save:hover {
+  box-shadow: 0px 0px 35px#f9b17a;
+}
+
+.errorColor {
+  color: transparent;
+}

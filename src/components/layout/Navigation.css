@@ -1,0 +1,26 @@
+nav a {
+  cursor: pointer;
+  color: #676f9d;
+  padding: 0 1rem 0.5rem 1rem;
+  border-bottom: transparent 2px solid;
+}
+
+.nav-active {
+  color: aliceblue;
+  border-bottom: #f9b17a 2px solid;
+}
+
+nav a:hover {
+  color: aliceblue;
+  border-bottom: #f9b17a 2px solid;
+}
+a {
+  text-decoration: none;
+  color: aliceblue;
+}
+nav {
+  padding: 2rem;
+  display: flex;
+  gap: 2rem;
+  font-weight: 400;
+}

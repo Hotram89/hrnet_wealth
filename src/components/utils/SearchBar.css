@@ -1,0 +1,11 @@
+.searchbar {
+  background-color: aliceblue;
+  position: absolute;
+  top: 2rem;
+  right: 4rem;
+  width: 15rem;
+  height: 1.5rem;
+  border-radius: 15px;
+  padding: 10px;
+  color: #141b2d;
+}

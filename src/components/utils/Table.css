@@ -1,0 +1,30 @@
+thead {
+  background-color: #f9b17a;
+}
+
+.container-cards {
+  padding: 2rem;
+}
+
+tr:hover {
+  background-color: aqua;
+  cursor: pointer;
+}
+
+.MuiDataGrid-columnHeaders,
+.MuiDataGrid-footerContainer {
+  background-color: #676f9d;
+}
+
+.MuiDataGrid-row {
+  background-color: aliceblue;
+  cursor: pointer;
+}
+
+.MuiDataGrid-row:hover {
+  background-color: #f9b17a;
+}
+
+.css-6h1dhi-MuiDataGrid-root {
+  background-color: #f9b17a;
+}
