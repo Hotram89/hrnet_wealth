@@ -31,6 +31,7 @@ label {
   font-size: 0.7rem;
   border-left: transparent 10px solid;
   cursor: pointer;
+  position: relative;
 }
 
 label:active,
@@ -69,4 +70,8 @@ input:focus {
 
 .errorColor {
   color: transparent;
+}
+
+.errorMsg {
+  height: 3rem;
 }

@@ -1,0 +1,6 @@
+.react-calendar {
+  position: absolute;
+  left: 0;
+  top: 5rem;
+  z-index: 5;
+}

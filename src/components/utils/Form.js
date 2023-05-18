@@ -8,6 +8,7 @@ import { ADD_USER } from "../../features/users/usersSlice";
 import BasicModal from "./Modal";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
+import "./Calendar.css";
 
 export default function Form() {
   const [startdate, setStartdate] = useState(new Date());
@@ -28,7 +29,7 @@ export default function Form() {
   const [picker, setPicker] = useState(false);
   const [secondPicker, setSecondPicker] = useState(false);
   const [modalIsOpen, setIsOpen] = useState(false);
-  const [errorMsg, setErrorMsg] = useState(false);
+  const [errorMsg, setErrorMsg] = useState(true);
 
   const dispatch = useDispatch();
   let navigate = useNavigate();
@@ -54,7 +55,6 @@ export default function Form() {
 
   function validateTextFields(e) {
     e.preventDefault();
-    console.log(userInfos);
     if (
       userInfos.firstname.length > 1 &&
       userInfos.lastname.length > 1 &&
@@ -68,7 +68,7 @@ export default function Form() {
       openModal();
     } else {
       console.log("les calculs sont pas bons");
-      setErrorMsg(true);
+      setErrorMsg(false);
     }
   }
 
@@ -142,24 +142,26 @@ export default function Form() {
         <label>
           Date of birth{" "}
           <input onClick={handlePicker} placeholder="date" value={newDate} />
+          {picker ? (
+            <Calendar onChange={setBirthdate} value={birthdate}></Calendar>
+          ) : (
+            <></>
+          )}
         </label>
-        {picker ? (
-          <Calendar onChange={setBirthdate} value={birthdate}></Calendar>
-        ) : (
-          <></>
-        )}
+
         <label>
           Start Date{" "}
           <input
             onClick={handleSecondPicker}
             value={startdate.toLocaleDateString("fr")}
           />
+          {secondPicker ? (
+            <Calendar onChange={setStartdate} value={startdate}></Calendar>
+          ) : (
+            <></>
+          )}
         </label>
-        {secondPicker ? (
-          <Calendar onChange={setStartdate} value={startdate}></Calendar>
-        ) : (
-          <></>
-        )}
+
         <label>
           street{" "}
           <input onChange={handleInputs} type="text" className="street" />
@@ -192,9 +194,11 @@ export default function Form() {
           />
         </label>
       </div>
-      <p className="errorMsg" visible={true}>
-        Veuillez valider tous les champs avant d'envoyer le formulaire
-      </p>
+      <div className="errorMsg">
+        <p hidden={errorMsg}>
+          Veuillez valider tous les champs avant d'envoyer le formulaire
+        </p>
+      </div>
 
       <button className="btn-save" onClick={validateTextFields}>
         Save
