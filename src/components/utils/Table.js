@@ -27,19 +27,23 @@ export default function BasicTable(props) {
 
   return (
     <div style={{ height: 400, width: "100%" }}>
-      <SearchBar list={data} setList={setData}></SearchBar>
+      <SearchBar list={users} setList={setData}></SearchBar>
 
-      <DataGrid
-        rows={data}
-        getRowId={(row) => v4()}
-        columns={columns}
-        initialState={{
-          pagination: {
-            paginationModel: { page: 0, pageSize: 5 },
-          },
-        }}
-        pageSizeOptions={[5, 10]}
-      ></DataGrid>
+      {data ? (
+        <DataGrid
+          rows={data}
+          getRowId={(row) => v4()}
+          columns={columns}
+          initialState={{
+            pagination: {
+              paginationModel: { page: 0, pageSize: 5 },
+            },
+          }}
+          pageSizeOptions={[5, 10]}
+        ></DataGrid>
+      ) : (
+        <></>
+      )}
     </div>
   );
 }

@@ -58,10 +58,12 @@ export default function Form() {
     if (
       userInfos.firstname.length > 1 &&
       userInfos.lastname.length > 1 &&
+      userInfos.StartDate.length > 1 &&
+      userInfos.department.length > 1 &&
+      userInfos.birthdate.length > 1 &&
       userInfos.street.length > 1 &&
       userInfos.City.length > 1 &&
-      userInfos.StartDate.length > 1 &&
-      userInfos.birthdate.length > 1 &&
+      userInfos.state.length > 1 &&
       userInfos.ZipCode.length > 1
     ) {
       dispatch(ADD_USER(userInfos));
@@ -97,6 +99,7 @@ export default function Form() {
       return setPicker(false);
     }
     setPicker(true);
+    setSecondPicker(false);
   }
 
   function handleSecondPicker(e) {
@@ -104,6 +107,7 @@ export default function Form() {
       return setSecondPicker(false);
     }
     setSecondPicker(true);
+    setPicker(false);
   }
 
   function selectstate(value) {
