@@ -5,10 +5,7 @@ import { NavLink } from "react-router-dom";
 const Navigation = () => {
   return (
     <nav>
-      <NavLink
-        to="/hrnet"
-        className={(nav) => (nav.isActive ? "nav-active" : "")}
-      >
+      <NavLink to="/" className={(nav) => (nav.isActive ? "nav-active" : "")}>
         Create Employee
       </NavLink>
       <NavLink

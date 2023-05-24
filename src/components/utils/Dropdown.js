@@ -5,7 +5,6 @@ import { v4 as uuidv4, v4 } from "uuid";
 
 export default function Dropdown(props) {
   const arr = props.options;
-  console.log(props);
 
   const [className, setClassName] = useState("");
   const [selected, setSelected] = useState(props.placeholder);
