@@ -44,8 +44,6 @@ const SearchBar = ({
     // e.preventDefault();
     let normalValue = e.target.value;
     let formatValue = normalValue.toLowerCase();
-    console.log(normalValue);
-    console.log(formatValue);
     setSearchInput(formatValue);
     filterList();
   };

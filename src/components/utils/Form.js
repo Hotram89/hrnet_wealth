@@ -69,7 +69,6 @@ export default function Form() {
       dispatch(ADD_USER(userInfos));
       openModal();
     } else {
-      console.log("les calculs sont pas bons");
       setErrorMsg(false);
     }
   }
@@ -112,6 +111,7 @@ export default function Form() {
 
   function selectstate(value) {
     const newObjState = { ...userInfos, state: value };
+    console.log(newObjState);
     setUserInfos(newObjState);
   }
 
@@ -143,9 +143,9 @@ export default function Form() {
             className="lastname"
           />
         </label>
-        <label>
+        <label onClick={handlePicker}>
           Date of birth{" "}
-          <input onClick={handlePicker} placeholder="date" value={newDate} />
+          <input onChange={handlePicker} placeholder="date" value={newDate} />
           {picker ? (
             <Calendar onChange={setBirthdate} value={birthdate}></Calendar>
           ) : (
@@ -153,10 +153,10 @@ export default function Form() {
           )}
         </label>
 
-        <label>
+        <label onClick={handleSecondPicker}>
           Start Date{" "}
           <input
-            onClick={handleSecondPicker}
+            onChange={handleSecondPicker}
             value={startdate.toLocaleDateString("fr")}
           />
           {secondPicker ? (
