@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import "./Form.css";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import Dropdown from "./Dropdown";
 import { statesList, servicesList } from "../../data/data";
 import { ADD_USER } from "../../features/users/usersSlice";
 import BasicModal from "./Modal";
+import { Dropdown } from "dropdown_mdournel";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import "./Calendar.css";
@@ -86,7 +86,7 @@ export default function Form() {
 
     setIsOpen(false);
 
-    navigate("/usersList");
+    // navigate("/usersList");
     if (modalIsOpen === true) {
       return setIsOpen(false);
     }
@@ -111,7 +111,6 @@ export default function Form() {
 
   function selectstate(value) {
     const newObjState = { ...userInfos, state: value };
-    console.log(newObjState);
     setUserInfos(newObjState);
   }
 
@@ -143,9 +142,14 @@ export default function Form() {
             className="lastname"
           />
         </label>
-        <label onClick={handlePicker}>
+        <label>
           Date of birth{" "}
-          <input onChange={handlePicker} placeholder="date" value={newDate} />
+          <input
+            onClick={handlePicker}
+            onChange={handlePicker}
+            placeholder="date"
+            value={newDate}
+          />
           {picker ? (
             <Calendar onChange={setBirthdate} value={birthdate}></Calendar>
           ) : (
@@ -153,9 +157,10 @@ export default function Form() {
           )}
         </label>
 
-        <label onClick={handleSecondPicker}>
+        <label>
           Start Date{" "}
           <input
+            onClick={handleSecondPicker}
             onChange={handleSecondPicker}
             value={startdate.toLocaleDateString("fr")}
           />
