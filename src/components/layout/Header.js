@@ -7,7 +7,7 @@ import Navigation from "./Navigation";
 const Header = () => {
   let navigate = useNavigate();
   function backHome(e) {
-    navigate("/hrnet");
+    navigate("/");
   }
   return (
     <header>
