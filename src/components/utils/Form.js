@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./Form.css";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { statesList, servicesList } from "../../data/data";
 import { ADD_USER } from "../../features/users/usersSlice";
@@ -32,7 +31,6 @@ export default function Form() {
   const [errorMsg, setErrorMsg] = useState(true);
 
   const dispatch = useDispatch();
-  let navigate = useNavigate();
 
   const handleInputs = (e) => {
     if (e.target.classList.contains("firstname")) {
@@ -86,7 +84,6 @@ export default function Form() {
 
     setIsOpen(false);
 
-    // navigate("/usersList");
     if (modalIsOpen === true) {
       return setIsOpen(false);
     }
